@@ -5,12 +5,12 @@
       /* Grid container styling */
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two columns for balance */
-        grid-auto-rows: auto; /* Dynamic row heights */
+        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
         gap: 15px; /* Space between grid items */
         width: 90%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
+        align-items: center; /* Align items for better balance */
       }
 
       /* Styling for each Lottie player */
@@ -30,9 +30,15 @@
       }
 
       /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        }
+      }
+
       @media (max-width: 768px) {
         .grid-container {
-          grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+          grid-template-columns: repeat(1, 1fr); /* Single column on mobile */
         }
       }
     </style>
