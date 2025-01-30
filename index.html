@@ -5,10 +5,11 @@
       /* Grid container styling */
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
-        gap: 10px; /* Space between grid items */
-        width: 100%;
-        max-width: 1200px; /* Adjust as needed */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for balance */
+        grid-auto-rows: auto; /* Dynamic row heights */
+        gap: 15px; /* Space between grid items */
+        width: 90%;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -16,7 +17,23 @@
       .grid-container lottie-player {
         width: 100%;
         height: auto;
-        max-width: 100%; /* Ensure it fits within the grid cell */
+        border-radius: 10px; /* Smooth edges */
+      }
+
+      /* Set specific aspect ratios */
+      .poster-1 {
+        aspect-ratio: 9 / 16; /* 1080x1920 */
+      }
+
+      .poster-2, .poster-3 {
+        aspect-ratio: 4 / 5; /* 1080x1350 */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+        }
       }
     </style>
   </head>
@@ -25,8 +42,9 @@
 
     <!-- Grid container -->
     <div class="grid-container">
-      <!-- Lottie Player 1 -->
+      <!-- Lottie Player 1 (Tall Poster) -->
       <lottie-player
+        class="poster-1"
         src="https://raw.githubusercontent.com/bayrax-ar/grid-motions/refs/heads/main/BSC%20export.json"
         background="transparent"
         speed="1"
@@ -36,6 +54,7 @@
 
       <!-- Lottie Player 2 -->
       <lottie-player
+        class="poster-2"
         src="https://raw.githubusercontent.com/bayrax-ar/grid-motions/refs/heads/main/Serbestlik.json"
         background="transparent"
         speed="1"
@@ -45,6 +64,7 @@
 
       <!-- Lottie Player 3 -->
       <lottie-player
+        class="poster-3"
         src="https://raw.githubusercontent.com/bayrax-ar/grid-motions/refs/heads/main/2.5B%20lottie.json"
         background="transparent"
         speed="1"
